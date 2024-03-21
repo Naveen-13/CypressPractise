@@ -12,6 +12,9 @@ describe('Frame work Design', function(){
         cy.get('input[name="name"]:nth-child(2)').should('have.attr', 'minlength', '2')
         cy.get('#inlineRadio3').should('be.disabled')
         cy.contains('Shop').click()
-        cy.selectProduct('Nokia Edge')
+        this.data.productName.forEach((element) => {
+            cy.selectProduct(element)
+        });
+        cy.get('.btn-primary').click()
     })
 })
