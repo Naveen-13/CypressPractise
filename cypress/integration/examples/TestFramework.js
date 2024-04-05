@@ -6,7 +6,7 @@ describe('Frame work Design', function(){
         })
     })
     it('adding the data', function(){n
-        cy.visit(Cypress.env('url')+"/angularpractice/")
+        cy.visit('https://rahulshettyacademy.com/angularpractice/')
         const homepage = new Homepage()
         homepage.getName().type(this.data.name)
         homepage.getGender().select(this.data.gender)
