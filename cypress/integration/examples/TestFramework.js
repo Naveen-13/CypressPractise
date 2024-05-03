@@ -5,16 +5,16 @@ describe('Frame work Design', function(){
             this.data = data
         })
     })
-    it('adding the data', function(){n
+    it('adding the data', function(){
         cy.visit('https://rahulshettyacademy.com/angularpractice/')
         const homepage = new Homepage()
         homepage.getName().type(this.data.name)
         homepage.getGender().select(this.data.gender)
-        cy.get('input[name="name"]:nth-child(1)').should('have.value', this.data.name)
-        cy.get('input[name="name"]:nth-child(2)').should('have.attr', 'minlength', '2')
+        homepage.getTwoWay.should('have.value', this.data.name)
+        homepage.getName.should('have.attr', 'minlength', '2')
         //cy.pause()      //to pause the test
-        cy.get('#inlineRadio3').should('be.disabled')
-        cy.contains('Shop').click()
+        homepage.getEntrepreneurElement.should('be.disabled')
+        homepage.getShopButton.click()
         this.data.productName.forEach((element) => {
             cy.selectProduct(element)
         });
